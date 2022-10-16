@@ -1,26 +1,38 @@
 <template>
-	<div class="column q-gutter-y-md">
+	<div class="q-pa-md">
 		<q-card>
 			<q-card-section>
 				<todo-form @input="addItem" />
 			</q-card-section>
 		</q-card>
-		<q-card>
-			<q-card-section>
-				<div class="text-h6">ToDo</div>
-			</q-card-section>
-			<q-card-section v-if="todoItems.length > 0">
-				<todo-list :todos="todoItems" @change="changeState" @delete="deleteItem" />
-			</q-card-section>
-		</q-card>
-		<q-card>
-			<q-card-section>
-				<div class="text-h6">Done</div>
-			</q-card-section>
-			<q-card-section v-if="doneItems.length > 0">
-				<todo-list :todos="doneItems" @change="changeState" @delete="deleteItem" />
-			</q-card-section>
-		</q-card>
+
+		<q-separator vertical inset />
+
+		<div class="row">
+			<div class="col">
+				<q-card>
+					<q-card-section>
+						<div class="text-h6">ToDo</div>
+					</q-card-section>
+					<q-card-section v-if="todoItems.length > 0">
+						<todo-list :todos="todoItems" @change="changeState" @delete="deleteItem" />
+					</q-card-section>
+				</q-card>
+			</div>
+
+			<q-separator inset />
+
+			<div class="col">
+				<q-card>
+					<q-card-section>
+						<div class="text-h6">Done</div>
+					</q-card-section>
+					<q-card-section v-if="doneItems.length > 0">
+						<todo-list :todos="doneItems" @change="changeState" @delete="deleteItem" />
+					</q-card-section>
+				</q-card>
+			</div>
+		</div>
 	</div>
 </template>
 

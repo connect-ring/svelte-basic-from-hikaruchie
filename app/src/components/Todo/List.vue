@@ -5,7 +5,6 @@
 				<q-checkbox dense :model-value="todo.done" @update:model-value="changeState(todo.id)" />
 			</q-item-section>
 			<q-item-section>{{ todo.content }}</q-item-section>
-			<q-item-section v-if="todo.deadline" side>~ {{ formatDate(todo.deadline) }}</q-item-section>
 			<q-item-section v-if="hover === todo.id" side>
 				<q-btn dense flat round icon="delete" @click="deleteItem(todo.id)" />
 			</q-item-section>
@@ -14,7 +13,6 @@
 </template>
 
 <script lang="ts">
-	import { format } from "date-fns";
 	import { defineComponent, PropType, ref } from "vue";
 
 	import Todo from "./models";
@@ -38,10 +36,6 @@
 		setup(_props, context) {
 			const hover = ref(null as number | null);
 
-			const formatDate = (date: Date): string => {
-				return format(date, "yyyy/MM/dd");
-			};
-
 			const changeState = (id: number): void => {
 				context.emit("change", id);
 			};
@@ -52,7 +46,6 @@
 
 			return {
 				hover,
-				formatDate,
 				changeState,
 				deleteItem
 			};
