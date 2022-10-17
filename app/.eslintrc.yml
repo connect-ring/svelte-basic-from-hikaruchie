@@ -1,0 +1,28 @@
+env:
+  # ブラウザで使用するのでbrowserとes2021をONにしておく
+  browser: true
+  es2021: true
+  # Vue3で使用するdefinePropsやdefineEmits,defineExposeなどを使用できるようにする
+  "vue/setup-compiler-macros": true
+
+# Vueを読み込めるようにする。eslint-plugin-vueが提供してくれている。
+parser: "vue-eslint-parser"
+
+parserOptions:
+  # VueをTypescriptで使う場合は指定する必要がある。vue-eslint-parser固有のオプション
+  parser: "@typescript-eslint/parser"
+  # ES Modulesを使ってコードを書く場合はmoduleを指定する必要がある。
+  sourceType: module
+
+# eslint-plugin-vueが提供してくれているルールを追加する。
+plugins:
+  - vue
+
+# パッケージが提供してくれているおすすめ設定を使う設定
+extends:
+  # eslintが提供してくれている設定
+  - "eslint:recommended"
+  # eslint-plugin-vueが提供してくれている設定
+  - "plugin:vue/vue3-recommended"
+  # Prettierを利用する設定
+  - "prettier"

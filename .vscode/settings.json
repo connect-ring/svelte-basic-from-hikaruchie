@@ -1,9 +1,18 @@
 {
-  "peacock.color": "ff3e00",
-  "azureFunctions.deploySubpath": "api",
-  "azureFunctions.postDeployTask": "npm install (functions)",
-  "azureFunctions.projectLanguage": "JavaScript",
-  "azureFunctions.projectRuntime": "~4",
-  "debug.internalConsoleOptions": "neverOpen",
-  "azureFunctions.preDeployTask": "npm prune (functions)"
+	"azureFunctions.deploySubpath": "api",
+	"azureFunctions.postDeployTask": "npm install (functions)",
+	"azureFunctions.projectLanguage": "JavaScript",
+	"azureFunctions.projectRuntime": "~4",
+	"debug.internalConsoleOptions": "neverOpen",
+	"azureFunctions.preDeployTask": "npm prune (functions)",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[typescriptreact]": {
+		// Formatter: Prettier 適用
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		// Linter: ESLint 適用
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	}
 }

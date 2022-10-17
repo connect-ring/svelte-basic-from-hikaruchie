@@ -27,6 +27,16 @@
 			"options": {
 				"cwd": "${workspaceFolder}/api"
 			}
+		},
+		{
+			"label": "Serve Vue3 app (npm)",
+			"type": "shell",
+			"command": "npm run serve",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"isBackground": true
 		}
 	]
 }

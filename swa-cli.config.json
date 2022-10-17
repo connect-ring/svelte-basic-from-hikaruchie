@@ -1,0 +1,11 @@
+{
+	"configurations": {
+		"app": {
+			"appLocation": "app/dist",
+			"appBuildCommand": "npm run dev",
+			"apiLocation": "api",
+			"apiBuildCommand": "npm start",
+			"swaConfigLocation": "./"
+		}
+	}
+}
